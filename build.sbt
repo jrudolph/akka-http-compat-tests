@@ -2,7 +2,7 @@ val akkaHttpMasterLocalV = "10.1.11+137-272d3d15+20200325-1033"
 val akka25LocalV = "2.5-SNAPSHOT"
 
 lazy val root = project.in(file("."))
-  .aggregate(library10_1_11_akka_2_5_30, userProject10_1_11_akka_2_6_3, userProjectAkkHttpNext_akka_2_5_30)
+  .aggregate(library10_1_11_akka_2_5_30, userProject10_1_11_akka_2_6_3, userProjectAkkHttpNext_akka_2_5_30, userProjectAkkHttpNext_akkaNext)
 
 lazy val library10_1_11_akka_2_5_30 = project
   .settings(
@@ -19,6 +19,7 @@ lazy val userProject10_1_11_akka_2_6_3 = project
       "com.typesafe.akka" %% "akka-http" % "10.1.11",
       "com.typesafe.akka" %% "akka-stream" % "2.6.3",
       "com.typesafe.akka" %% "akka-actor-typed" % "2.6.3",
+      "org.scalatest" %% "scalatest" % "3.1.0" % "test",
     )
   )
 
@@ -28,6 +29,7 @@ lazy val userProjectAkkHttpNext_akka_2_5_30 = project
     libraryDependencies ++= Seq(
       "com.typesafe.akka" %% "akka-http" % akkaHttpMasterLocalV,
       "com.typesafe.akka" %% "akka-stream" % "2.5.30",
+      "org.scalatest" %% "scalatest" % "3.1.0" % "test",
     )
   )
 
@@ -38,5 +40,6 @@ lazy val userProjectAkkHttpNext_akkaNext = project
       "com.typesafe.akka" %% "akka-http" % akkaHttpMasterLocalV,
       "com.typesafe.akka" %% "akka-stream" % akka25LocalV,
       "com.typesafe.akka" %% "akka-actor-typed" % akka25LocalV,
+      "org.scalatest" %% "scalatest" % "3.1.0" % "test",
     )
   )
